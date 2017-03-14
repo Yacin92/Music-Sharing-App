@@ -1,3 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    {% load staticfiles%}
+    <link rel="stylesheet" href="{% static 'music/style.css' %}">
+  </head>
+  <body>
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- logo and collapse button -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top_nav_bar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'music:index'%}">Musica</a>
+            </div>
+
+            <!-- items -->
+            <div class="collapse navbar-collapse" id="top_nav_bar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{% url 'music:index'%}">
+                            <span class="glyphicon glyphicon-cd" aria-hidden="True"></span>&nbsp; Albums
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs
+                        </a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q" value=""/>
+                    </div>
+                    <button type="submit" class="btn btn-default"> search </button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; add album
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+</nav>
+
 {%if all_albums%}
     <ul>
         {% for album in all_albums%}

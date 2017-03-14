@@ -4,7 +4,7 @@ from .models import Album, Song
 def index(request):
 
     all_albums = Album.objects.all()
-    context = {'all_albums':all_albums}
+    context = {'all_albums' : all_albums}
     return render(request, "music/index.html", context)
 
 def detail(request, album_id):
@@ -23,4 +23,4 @@ def favorite(request, album_id):
     else:
         selected_song.is_favorite = True
         selected_song.save()
-        return render (request, 'music/detail.html', {"album":album})
+        return render (request, 'music/detail.html', {"album" : album})
