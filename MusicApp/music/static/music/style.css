@@ -1,3 +1,7 @@
 body{
-    background : white url('images/background.jpg');
+    /*background : white url('images/background.jpg');*/
+    background : rgb(207, 207, 207);
+}
+.navbar{
+    border-radius : 0px;
 }
