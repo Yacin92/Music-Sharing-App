@@ -1,26 +1,16 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Album, Song
+from django.views import generic
+from .models import Album
 
-def index(request):
+class IndexView (generic.ListView):
 
-    all_albums = Album.objects.all()
-    context = {'all_albums' : all_albums}
-    return render(request, "music/index.html", context)
+    template_name = 'music/index.html'
+    context_object_name = 'all_albums'
 
-def detail(request, album_id):
+    def get_queryset(self):
 
-    album = get_object_or_404(Album, pk=album_id)
-    context = {'album':album}
-    return render (request, 'music/detail.html', context)
+        return Album.objects.all()
 
-def favorite(request, album_id):
+class DetailView (generic.DetailView):
 
-    album = get_object_or_404(Album, pk=album_id)
-    try:
-        selected_song = album.song_set.get(pk=request.POST["song"])
-    except (KeyError, Song.DoesNotExist):
-        return render (request, 'music/detail.html', {"album":album, "error_message":"you didn't select a valid song"})
-    else:
-        selected_song.is_favorite = True
-        selected_song.save()
-        return render (request, 'music/detail.html', {"album" : album})
+    model = Album
+    template_name = 'music/detail.html'
