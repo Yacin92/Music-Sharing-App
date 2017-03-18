@@ -10,5 +10,9 @@ urlpatterns = [
     # /music/712/
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="detail"),
 
+    # music/album/add
+    url(r'album/add$', views.CreateView.as_view(), name="album-add"),
+
+
 
 ]
