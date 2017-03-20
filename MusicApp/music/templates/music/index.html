@@ -13,8 +13,9 @@
                          <h2>{{album.album_title}}</h2>
                          <h3>{{album.artist}}</h3>
                          <a  class="btn btn-primary" href="{% url 'music:detail' album.id %}">view details</a>
-                         <button class="btn btn-default"><span class=" glyphicon glyphicon-trash"></span></button>
-                         <button class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                         <a  class="btn btn-danger" href="{% url 'music:album-delete' album.id %}">delete</a>
+                         <a  class="btn btn-default" href="{% url 'music:album-update' album.id %}">update</a>
+
                      </div>
                 {%endfor%}
 

@@ -1,0 +1,10 @@
+
+
+{%extends 'music/base.html'%}
+{%block title%} deleting album{%endblock%}
+{% block body%}
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Confirm" />
+</form>
+{%endblock%}

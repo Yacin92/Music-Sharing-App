@@ -7,11 +7,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        {% load staticfiles%}
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+        {% load staticfiles %}
+
+        <link rel="stylesheet" href="{% static 'music/bootstrap-3.3.7-dist/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{% static 'music/bootstrap-3.3.7-dist/js/bootstrap.min.js'%}"></script>
+
         <link rel="stylesheet" href="{% static 'music/style.css' %}">
     </head>
     <body>
@@ -49,7 +56,7 @@
                         </form>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                <a href="#">
+                                <a href="{% url 'music:album-add'%}">
                                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; add album
                                 </a>
                             </li>
